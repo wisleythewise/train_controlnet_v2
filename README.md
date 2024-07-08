@@ -61,32 +61,3 @@ accelerate launch train_controlnet.py \
 ```
 
 After training you can run inference in the model using the inference.py file specifying the hub_model_id
-
-
-testing the new hypothesis 
-
-```
-accelerate launch train_controlnet.py \
- --pretrained_model_name_or_path="runwayml/stable-diffusion-v1-5" \
- --output_dir="/home/wisley/train_controlnet/output_test" \
- --dataset_name="JaspervanLeuven/prescan_segmentation" \
- --conditioning_image_column="conditioning_images_one" \
- --image_column="ground_truth" \
- --caption_column="caption" \
- --hub_model_id="JaspervanLeuven/controlnet_faulty_data" \
- --resolution=512 \
- --learning_rate=1e-5 \
- --train_batch_size=4 \
- --validation_steps=200\
- --num_train_epochs=4 \
- --tracker_project_name="controlnet_faulty_data" \
- --checkpointing_steps=2000 \
- --report_to="wandb" \
- --push_to_hub \
- --set_grads_to_none \
- --gradient_checkpointing \
- --mixed_precision="no" \
- --cache_dir="/home/wisley/train_controlnet/cache/" \
- --validation_prompt="A driving scene"\
- --validation_image="/home/wisley/train_controlnet/validation.png"\
-```
