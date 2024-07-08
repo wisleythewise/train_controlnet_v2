@@ -1,0 +1,12 @@
+/data
+/ouput
+/output*
+/cache
+/wandb
+config.json
+*.bin
+*.pkl
+*.safetensors
+*.png
+
+
